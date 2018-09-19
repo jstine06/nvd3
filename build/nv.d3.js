@@ -1,4 +1,4 @@
-/* nvd3 version 1.8.2 (https://github.com/novus/nvd3) 2016-01-24 */
+/* nvd3 version 1.8.2-beta.1 (https://github.com/jstine06/nvd3) 2018-09-19 */
 (function(){
 
 // set up main nv object
@@ -248,6 +248,11 @@ nv.interactiveGuideline = function() {
                         mouseOutAnyReason = true;
                     }
 
+                }
+
+                if (d3.event.overrideX !== undefined && d3.event.overrideY !== undefined) {
+                    mouseX = d3.event.overrideX;
+                    mouseY = d3.event.overrideY;
                 }
 
                 if(subtractMargin) {
@@ -558,8 +563,8 @@ nv.models.tooltip = function() {
      */
     var position = function() {
         return {
-            left: d3.event !== null ? d3.event.clientX : 0,
-            top: d3.event !== null ? d3.event.clientY : 0
+            left: d3.event !== null ? (d3.event.tooltipX ? d3.event.tooltipX : d3.event.clientX) : 0,
+            top: d3.event !== null ? (d3.event.tooltipY ? d3.event.tooltipY : d3.event.clientY) : 0
         };
     };
 
@@ -13785,5 +13790,5 @@ nv.models.sunburstChart = function() {
     return chart;
 };
 
-nv.version = "1.8.2";
+nv.version = "1.8.2-beta.1";
 })();

@@ -75,6 +75,11 @@ nv.interactiveGuideline = function() {
 
                 }
 
+                if (d3.event.overrideX !== undefined && d3.event.overrideY !== undefined) {
+                    mouseX = d3.event.overrideX;
+                    mouseY = d3.event.overrideY;
+                }
+
                 if(subtractMargin) {
                     mouseX -= margin.left;
                     mouseY -= margin.top;

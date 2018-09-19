@@ -47,8 +47,8 @@ nv.models.tooltip = function() {
      */
     var position = function() {
         return {
-            left: d3.event !== null ? d3.event.clientX : 0,
-            top: d3.event !== null ? d3.event.clientY : 0
+            left: d3.event !== null ? (d3.event.tooltipX ? d3.event.tooltipX : d3.event.clientX) : 0,
+            top: d3.event !== null ? (d3.event.tooltipY ? d3.event.tooltipY : d3.event.clientY) : 0
         };
     };
 

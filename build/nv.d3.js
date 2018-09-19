@@ -1,4 +1,4 @@
-/* nvd3 version 1.8.2-beta.1 (https://github.com/jstine06/nvd3) 2018-09-19 */
+/* nvd3 version 1.8.2 (https://github.com/jstine06/nvd3) 2018-09-19 */
 (function(){
 
 // set up main nv object
@@ -13790,5 +13790,5 @@ nv.models.sunburstChart = function() {
     return chart;
 };
 
-nv.version = "1.8.2-beta.1";
+nv.version = "1.8.2";
 })();
